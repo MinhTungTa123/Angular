@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   width: 200px;
-  background-color: #f1f1f1;
+  background-color:cornflowerblue;
   position: fixed;
   height: 100%;
   overflow: auto;
@@ -13,20 +13,19 @@
   color: black;
   padding: 16px;
   text-decoration: none;
+  border-bottom: 1px solid;
+  border-radius: 10px 10px 10px 10px;
 }
 
 .sidebar a.active {
-  background-color: #4CAF50;
+  background-color:brown;
   color: white;
 }
 
 .sidebar a:hover:not(.active) {
-  background-color: #555;
-  color: white;
+  background-color:pink;
+  color: aqua;
 }
-
-
-
 @media screen and (max-width: 700px) {
   .sidebar {
     width: 100%;
@@ -37,7 +36,7 @@
   div.content {margin-left: 0;}
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .sidebar a {
     text-align: center;
     float: none;

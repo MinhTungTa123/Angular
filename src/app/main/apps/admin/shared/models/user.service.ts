@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { from } from 'rxjs';
 import {FormBuilder,Validators,FormGroup} from '@angular/forms'
 import {HttpClient} from '@angular/common/http'
+import { Nhanvien } from './nhanvien.model';
 @Injectable({
   providedIn: 'root'
 })

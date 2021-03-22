@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { UserService } from '../../shared/models/user.service';
 
 @Component({
   selector: 'app-themsuanv',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThemsuanvComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private nhanvienservice : UserService) { }
   ngOnInit() {
   }
-
+  onSubmit(form:NgForm){
+    console.log(form.value)
+  }
 }

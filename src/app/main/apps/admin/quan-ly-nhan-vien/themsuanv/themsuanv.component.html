@@ -1,3 +1,13 @@
-<p>
-  themsuanv works!
-</p>
+<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+  <input type="hidden" name="ProjectId" #ProjectId="ngModel" [(ngModel)]="nhanvienservice.formModel">
+  <div class="form-group">
+    <label>Email</label>
+    <input name="ProjectName" #ProjectName="ngModel" [(ngModel)]="nhanvienservice.formModel" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <button class="form-control btn btn-warning">Submit</button>
+  </div>
+</form>
+<div class="form-group">
+  <!-- <button (click)="resetForm()" class=" form-control btn btn-danger">Reset</button> -->
+</div>

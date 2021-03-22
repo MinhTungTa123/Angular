@@ -1,11 +1,10 @@
 <div id="login">
-  <h3 class="text-center text-white pt-5">Login form</h3>
+  <h3 class="text-center text-info pt-5">Đăng Nhập</h3>
   <div class="container">
       <div id="login-row" class="row justify-content-center align-items-center">
-          <div id="login-column" class="col-md-6">
+          <div id="login-column" class="col-md-4">
               <div id="login-box" class="col-md-12">
                   <form #form="ngForm" id="login-form"  (submit)="onSubmit(form)">
-                      <h3 class="text-center text-info">Đăng Nhập</h3>
                       <div class="form-group">
                           <label for="username" class="text-info">Tên Đăng Nhập:</label><br>
                           <input class="form-control" #UserName="ngModel" name="UserName" [(ngModel)]="formModel.UserName" required>
@@ -14,12 +13,18 @@
                           <label for="password" class="text-info">Mật Khẩu:</label><br>
                           <input type="password" class="form-control" #Password="ngModel" name="Password" [(ngModel)]="formModel.Password" required>
                         </div>
-                      <div class="form-group">
-                          <label for="remember-me" class="text-info"><span>Lưu đăng nhập</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
-                          <button type="submit" class="btn btn-success">Đăng Nhập</button>
+                      <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <label for="remember-me" class="text-info"><span><input id="remember-me" name="remember-me" type="checkbox"></span>&nbsp;&nbsp;<span>Lưu đăng nhập</span></label>
                         </div>
-                        <div id="register-link" class="text-right">
-                          <a routerLink="/dangky" class="text-info">Đăng Ký</a>
+                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <div id="register-link" class="text-right">
+                              <a routerLink="/dangky" class="text-info">Đăng Ký</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <button  type="submit"  class="btn btn-primary form-control">Đăng Nhập</button>
                       </div>
                   </form>
               </div>

@@ -1,3 +1,30 @@
-<p>
-  congviec works!
-</p>
+<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+  <input type="hidden" name="jobId" #jobId="ngModel" [(ngModel)]="congviecservice.formdata.jobId">
+  <div class="form-group">
+    <label>Tên Công Việc</label>
+    <input name="jobName" #jobName="ngModel" [(ngModel)]="congviecservice.formdata.jobName" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <label>Trạng Thái</label>
+    <select name="status" #status="ngModel"  [(ngModel)]="congviecservice.formdata.status" class="form-control">
+      <option value="false">Chưa Hoàn Thành</option>
+      <option value="true">Hoàn Thành</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Ngày Khởi Tạo</label>
+    <input name="jobDate" readonly #jobDate="ngModel" [(ngModel)]="congviecservice.formdata.jobDate" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <label>Dự Án</label>
+    <select name="projectId" class="form-control"#UserId  [(ngModel)]="congviecservice.formdata.projectId">
+      <option *ngFor="let item of duanservice.list" [value]="item.projectId">{{item.projectName}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <button class="form-control btn btn-warning">Submit</button>
+  </div>
+</form>
+<div class="form-group">
+  <button (click)="resetForm()" class=" form-control btn btn-danger">Reset</button>
+</div>

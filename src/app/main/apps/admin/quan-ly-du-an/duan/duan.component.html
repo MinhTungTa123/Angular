@@ -1,3 +1,26 @@
-<p>
-  duan works!
-</p>
+<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+  <input type="hidden" name="ProjectId" #ProjectId="ngModel" [(ngModel)]="duanservice.formData.projectId">
+  <div class="form-group">
+    <label>Tên Dự Án</label>
+    <input name="ProjectName" #ProjectName="ngModel" [(ngModel)]="duanservice.formData.projectName" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <label>Trạng Thái</label>
+    <select name="projectStatus" #projectStatus="ngModel"  [(ngModel)]="duanservice.formData.projectStatus" class="form-control">
+      <option value="{{false}}">Khởi Tạo</option>
+      <option value="{{true}}">Hoàn Thành</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Nhân Viên</label>
+    <select name="UserId" class="form-control"#UserId  [(ngModel)]="duanservice.formData.userId">
+      <option *ngFor="let item of userDetails" [value]="item.id">{{item.userName}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <button class="form-control btn btn-warning">Submit</button>
+  </div>
+</form>
+<div class="form-group">
+  <button (click)="resetForm()" class=" form-control btn btn-danger">Reset</button>
+</div>

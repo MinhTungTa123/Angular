@@ -1,4 +1,1 @@
-body {
-  margin: 0;
-  font-family: "Lato", sans-serif;
-}
+@import '../node_modules/ngx-toastr/toastr.css';

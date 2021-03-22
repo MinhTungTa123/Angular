@@ -1,3 +1,19 @@
-<p>
-  chitietcongviec works!
-</p>
+<table class="table table-bordered table-sm">
+  <thead>
+    <tr>
+      <th>Tên Dự Án</th>
+      <th>Trạng Thái</th>
+      <th>Thao Tác</th>
+      <th>Ngày</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of congviecservice.listcongviec">
+      <td (click)="populateForm(emp)">{{emp.jobName}}</td>
+      <td (click)="populateForm(emp)">{{emp.projectId}}</td>
+      <td (click)="populateForm(emp)">{{emp.status}}</td>
+      <td (click)="populateForm(emp)">{{emp.jobDate}}</td>
+      <td style="text-align: center;"><button (click)="onDelete(emp.jobId)" class="btn btn-sm btn-outline-danger">X</button></td>
+    </tr>
+  </tbody>
+</table>

@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 const appRoutes: Routes = [
   {
       path: '',
@@ -27,6 +30,8 @@ const appRoutes: Routes = [
       {
         preloadingStrategy: PreloadAllModules,
       }),
+      BrowserAnimationsModule,
+      ToastrModule.forRoot(), // ToastrModule added
 
   ],
   providers: [

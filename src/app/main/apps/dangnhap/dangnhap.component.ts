@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms'
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { UserService } from '../admin/shared/models/user.service';
 @Component({
   selector: 'app-dangnhap',
@@ -14,7 +15,7 @@ export class DangnhapComponent implements OnInit {
     Password:''
   }
   message = ""
-  constructor(private service :UserService,private router:Router) { }
+  constructor(private service :UserService,private router:Router,private toastr : ToastrService) { }
 
   ngOnInit() {
     if (localStorage.getItem('token') != null)
@@ -25,11 +26,12 @@ export class DangnhapComponent implements OnInit {
     this.service.login(form.value).subscribe(
         (res:any)=>{
           localStorage.setItem('token',res.token);
+          this.toastr.success("Đăng Nhập Thành Công")
           this.router.navigateByUrl('/admin')
         },
         err =>{
           if(err.status ==400){
-            this.message ="vui long kiem tra lai ten dang nhap,mat khau";
+            this.toastr.error("Tên Đăng Nhập Hoặc Mật Khẩu Không Chính Xác!!");
           }else{
             console.log(err)
           }
